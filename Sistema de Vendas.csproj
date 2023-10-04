@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3FF56ED-1377-4AEC-9176-A337EC460176}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sistema_de_Vendas</RootNamespace>
+    <AssemblyName>Sistema de Vendas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.1.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CadastroCliente_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroCliente_Cadastro.Designer.cs">
+      <DependentUpon>CadastroCliente_Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroCliente_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroCliente_Menu.Designer.cs">
+      <DependentUpon>CadastroCliente_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroFornecedor_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroFornecedor_Cadastro.Designer.cs">
+      <DependentUpon>CadastroFornecedor_Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroFornecedor_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroFornecedor_Menu.Designer.cs">
+      <DependentUpon>CadastroFornecedor_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroProduto_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroProduto_Cadastro.Designer.cs">
+      <DependentUpon>CadastroProduto_Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroProduto_Entrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroProduto_Entrada.Designer.cs">
+      <DependentUpon>CadastroProduto_Entrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroProduto_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroProduto_Menu.Designer.cs">
+      <DependentUpon>CadastroProduto_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroUsuario_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroUsuario_Cadastro.Designer.cs">
+      <DependentUpon>CadastroUsuario_Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroUsuario_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroUsuario_Menu.Designer.cs">
+      <DependentUpon>CadastroUsuario_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroVenda_Consulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroVenda_Consulta.Designer.cs">
+      <DependentUpon>CadastroVenda_Consulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroVenda_Vender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroVenda_Vender.Designer.cs">
+      <DependentUpon>CadastroVenda_Vender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entrada_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entrada_Cadastro.Designer.cs">
+      <DependentUpon>Entrada_Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entrada_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entrada_Info.Designer.cs">
+      <DependentUpon>Entrada_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entrada_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entrada_Menu.Designer.cs">
+      <DependentUpon>Entrada_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs.Designer.cs">
+      <DependentUpon>Logs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcurarCliente_Venda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcurarCliente_Venda.Designer.cs">
+      <DependentUpon>ProcurarCliente_Venda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcurarFornecedor_Entrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcurarFornecedor_Entrada.Designer.cs">
+      <DependentUpon>ProcurarFornecedor_Entrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcurarInfo_Venda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcurarInfo_Venda.Designer.cs">
+      <DependentUpon>ProcurarInfo_Venda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcurarProduto_Venda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcurarProduto_Venda.Designer.cs">
+      <DependentUpon>ProcurarProduto_Venda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio.Designer.cs">
+      <DependentUpon>Relatorio.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CadastroCliente_Cadastro.resx">
+      <DependentUpon>CadastroCliente_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroCliente_Menu.resx">
+      <DependentUpon>CadastroCliente_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroFornecedor_Cadastro.resx">
+      <DependentUpon>CadastroFornecedor_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroFornecedor_Menu.resx">
+      <DependentUpon>CadastroFornecedor_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroProduto_Cadastro.resx">
+      <DependentUpon>CadastroProduto_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroProduto_Entrada.resx">
+      <DependentUpon>CadastroProduto_Entrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroProduto_Menu.resx">
+      <DependentUpon>CadastroProduto_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroUsuario_Cadastro.resx">
+      <DependentUpon>CadastroUsuario_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroUsuario_Menu.resx">
+      <DependentUpon>CadastroUsuario_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroVenda_Consulta.resx">
+      <DependentUpon>CadastroVenda_Consulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroVenda_Vender.resx">
+      <DependentUpon>CadastroVenda_Vender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entrada_Cadastro.resx">
+      <DependentUpon>Entrada_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entrada_Info.resx">
+      <DependentUpon>Entrada_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entrada_Menu.resx">
+      <DependentUpon>Entrada_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcurarCliente_Venda.resx">
+      <DependentUpon>ProcurarCliente_Venda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcurarFornecedor_Entrada.resx">
+      <DependentUpon>ProcurarFornecedor_Entrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcurarInfo_Venda.resx">
+      <DependentUpon>ProcurarInfo_Venda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcurarProduto_Venda.resx">
+      <DependentUpon>ProcurarProduto_Venda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Relatorio.resx">
+      <DependentUpon>Relatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
