@@ -160,6 +160,30 @@ namespace Sistema_de_Vendas
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Sucesso!");
+
+                    string sqlLog = "INSERT INTO logs (antes, depois, tabela_modificada, data_alteracao, usuario_alterou, tipo) VALUES (@antes, @depois, @tabela_modificada, @data_alteracao, @usuario_alterou, @tipo)";
+
+                    // Crie um objeto MySqlCommand
+                    MySqlCommand cmdLog = new MySqlCommand(sqlLog, conexao);
+
+
+                    string tabela = "produtos";
+                    string sqlConsulta = "SELECT nome FROM login_logs ORDER BY data_login DESC LIMIT 1";
+                    MySqlCommand cmdConsulta = new MySqlCommand(sqlConsulta, conexao);
+                    cmdConsulta.ExecuteNonQuery();
+                    string nomeUsuario = cmdConsulta.ExecuteScalar() as string;
+                    string efeitoPlacebo = "null";
+                    string tipo = "Alteração";
+
+                    // Defina os parâmetros
+                    cmdLog.Parameters.AddWithValue("@antes", efeitoPlacebo); // Substitua pelo nome do produto
+                    cmdLog.Parameters.AddWithValue("@depois", editedValue); // Substitua pelo preço do produto
+                    cmdLog.Parameters.AddWithValue("@tabela_modificada", tabela); // Substitua pelo preço do produto
+                    cmdLog.Parameters.AddWithValue("@data_alteracao", DateTime.Now);
+                    cmdLog.Parameters.AddWithValue("@usuario_alterou", nomeUsuario); // Substitua pelo preço do produto
+                    cmdLog.Parameters.AddWithValue("@tipo", tipo);
+                    cmdLog.ExecuteNonQuery();
+
                 }
                 catch (MySqlException ex)
                 {
@@ -185,6 +209,12 @@ namespace Sistema_de_Vendas
                 // Atualize o valor no banco de dados
                 AtualizarValorNoBancoDeDados(primaryKeyValue, columnIndex, editedValue);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CadastroProduto_Excluir frm = new CadastroProduto_Excluir();
+            frm.Show();
         }
     }
 

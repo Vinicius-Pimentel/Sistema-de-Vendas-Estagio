@@ -15,7 +15,9 @@ namespace Sistema_de_Vendas
     {
         private string connectionString;
         // Variável para armazenar o nome do usuário logado
-        public string NomeUsuarioLogado { get; private set; }
+        public string NomeUsuarioLogado { get; set; }
+
+
         public Login()
         {
             InitializeComponent();
@@ -69,6 +71,9 @@ namespace Sistema_de_Vendas
                 // Credenciais válidas, armazene o nome do usuário
                 NomeUsuarioLogado = usuario;
 
+                // Registre o log de login
+                RegistrarLogLogin(usuario);
+
                 // Abra a tela do sistema
                 Menu menuForm = new Menu();
                 this.Hide();
@@ -103,6 +108,37 @@ namespace Sistema_de_Vendas
             {
                 MessageBox.Show("Erro ao validar credenciais: " + ex.Message);
                 return false;
+            }
+        }
+        private void RegistrarLogLogin(string usuario)
+        {
+            try
+            {
+                using (MySqlConnection conexao = new MySqlConnection(connectionString))
+                {
+                    conexao.Open();
+
+                    string sql = "INSERT INTO login_logs (nome, data_login) VALUES (@nome, @data_login)";
+                    MySqlCommand cmd = new MySqlCommand(sql, conexao);
+
+                    cmd.Parameters.AddWithValue("@nome", usuario);
+                    cmd.Parameters.AddWithValue("@data_login", DateTime.Now);
+
+                    int linhasAfetadas = cmd.ExecuteNonQuery();
+
+                    if (linhasAfetadas > 0)
+                    {
+                        // Registro de login bem-sucedido
+                    }
+                    else
+                    {
+                        // O registro de login falhou
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Erro ao registrar o log de login: " + ex.Message);
             }
         }
     }

@@ -112,19 +112,19 @@ namespace Sistema_de_Vendas
 
         private void lucratividadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Relatorio frm = new Relatorio();
+            RelatorioLucratividade frm = new RelatorioLucratividade();
             frm.Show();
         }
 
         private void vendasPorPeríodoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Relatorio frm = new Relatorio();
+            RelatorioVendas frm = new RelatorioVendas();
             frm.Show();
         }
 
         private void clientesCadastradosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Relatorio frm = new Relatorio();
+            RelatorioClientes frm = new RelatorioClientes();
             frm.Show();
         }
 
